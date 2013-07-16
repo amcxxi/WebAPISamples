@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="">
+<head>
+    <title>Países</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+    <body data-ng-controller="mainCtrl">
+        <!-- Ejemplo de Hola Mundo -->
+        <input type="text" placeholder="Escriba un país" data-ng-model="pais" />        
+        <h5>{{pais}}</h5>        
+        <hr />
+        <!-- Presentar datos desde una lista estática -->
+        <ul>
+            <li data-ng-repeat="pais in ['Nicaragua', 'Perú', 'Venezuela', 'Guatemala', 'Honduras']">
+                {{ pais }}
+            </li>
+        </ul>
+
+        <hr />
+
+        <!-- Presentar datos desde REST API -->
+        <ul>
+            <li data-ng-repeat="pais in paises">
+                <span>{{ pais.Id }}  -  </span>
+                <span style="font-weight: bold">{{ pais.Nombre }}</span>
+            </li>
+        </ul>
+        
+        <br />
+        <span style="color:red">{{error}}</span>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        <script src="Scripts/app.js"></script>
+
+    </body>
+</html>
