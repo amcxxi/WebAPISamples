@@ -14,8 +14,13 @@ namespace RoutingWebApiTest.Controllers
         {
             return new string[] { "value1", "value2" };
         }
+        
+        // Es necesario que exista una acción llamada igual al verbo HTTP (Get, Post...) ya que esta nomenclatura fue establecida
+        // por defecto en la configuración de mapeo. Si se desea definir un nombre distinto, se debe decorar con ActionName, tomando como param. el nombre
+        // en la config. de mapeo, tal como aparece a continuación.
+        // [ActionName("Get")]
+        // public string GetDoctorById(int id)
 
-        [HttpGet]
         // GET api/values/1
         public string Get(int id)
         {
